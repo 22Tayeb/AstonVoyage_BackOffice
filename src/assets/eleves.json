@@ -1,0 +1,113 @@
+{
+    "eleves": [
+      {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "age": 13,
+        "classe": "6ème",
+        "specialite": "Sciences",
+        "a_redouble": false
+      },
+      {
+        "id": 2,
+        "nom": "Leclerc",
+        "prenom": "Emma",
+        "age": 13,
+        "classe": "6ème",
+        "specialite": "Sports",
+        "a_redouble": false
+      },
+      {
+        "id": 3,
+        "nom": "Lefebvre",
+        "prenom": "Charlotte",
+        "age": 12,
+        "classe": "4ème",
+        "specialite": "Musique",
+        "a_redouble": false
+      },
+      {
+        "id": 4,
+        "nom": "Michel",
+        "prenom": "Lucas",
+        "age": 14,
+        "classe": "3ème",
+        "specialite": "Langues",
+        "a_redouble": false
+      },
+      {
+        "id": 5,
+        "nom": "Dubois",
+        "prenom": "Adam",
+        "age": 12,
+        "classe": "6ème",
+        "specialite": "Technologie",
+        "a_redouble": true
+      },
+      {
+        "id": 6,
+        "nom": "Petit",
+        "prenom": "Chloé",
+        "age": 14,
+        "classe": "3ème",
+        "specialite": "Sports",
+        "a_redouble": false
+      },
+      {
+        "id": 7,
+        "nom": "Moreau",
+        "prenom": "Léa",
+        "age": 12,
+        "classe": "4ème",
+        "specialite": "Musique",
+        "a_redouble": false
+      },
+      {
+        "id": 8,
+        "nom": "Simon",
+        "prenom": "Hugo",
+        "age": 13,
+        "classe": "6ème",
+        "specialite": "Technologie",
+        "a_redouble": true
+      },
+      {
+        "id": 9,
+        "nom": "Rousseau",
+        "prenom": "Thomas",
+        "age": 14,
+        "classe": "5ème",
+        "specialite": "Sciences",
+        "a_redouble": false
+      },
+      {
+        "id": 10,
+        "nom": "Fournier",
+        "prenom": "Zoé",
+        "age": 14,
+        "classe": "5ème",
+        "specialite": "Arts",
+        "a_redouble": false
+      },
+      {
+        "id": 11,
+        "nom": "Garcia",
+        "prenom": "Alexandre",
+        "age": 15,
+        "classe": "3ème",
+        "specialite": "Arts",
+        "a_redouble": true
+      },
+      {
+        "id": 12,
+        "nom": "Lecomte",
+        "prenom": "Louis",
+        "age": 14,
+        "classe": "4ème",
+        "specialite": "Sciences",
+        "a_redouble": false
+      }
+    ]
+  }
+  

@@ -1,0 +1,11 @@
+<div class="form">
+    <form [formGroup]="loginForm">
+      <label for="username">Nom d'utilisateur:</label>
+      <input type="text" id="username" formControlName="username">
+      <br>
+      <label for="password">Mot de passe:</label>
+      <input type="password" id="password" formControlName="password">
+      <br>
+      <button routerLink="home" [disabled]="!loginForm.valid" type="submit" (click)="onSubmitForm()">Se connecter</button>
+    </form>
+    </div>
