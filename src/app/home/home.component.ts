@@ -14,7 +14,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   eleves!: Eleve[];
-  displayedColumns: string[] = ['nom','prenom','age','classe','specialite','a_redouble'];
+  displayedColumns: string[] = ['nom','prenom','age','classe','specialite','redouble'];
 
   constructor(private elevesService : ElevesService,
               private router : Router,

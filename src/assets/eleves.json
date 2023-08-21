@@ -7,7 +7,7 @@
         "age": 13,
         "classe": "6ème",
         "specialite": "Sciences",
-        "a_redouble": false
+        "redouble": false
       },
       {
         "id": 2,
@@ -16,7 +16,7 @@
         "age": 13,
         "classe": "6ème",
         "specialite": "Sports",
-        "a_redouble": false
+        "redouble": false
       },
       {
         "id": 3,
@@ -25,7 +25,7 @@
         "age": 12,
         "classe": "4ème",
         "specialite": "Musique",
-        "a_redouble": false
+        "redouble": false
       },
       {
         "id": 4,
@@ -34,7 +34,7 @@
         "age": 14,
         "classe": "3ème",
         "specialite": "Langues",
-        "a_redouble": false
+        "redouble": false
       },
       {
         "id": 5,
@@ -43,7 +43,7 @@
         "age": 12,
         "classe": "6ème",
         "specialite": "Technologie",
-        "a_redouble": true
+        "redouble": true
       },
       {
         "id": 6,
@@ -52,7 +52,7 @@
         "age": 14,
         "classe": "3ème",
         "specialite": "Sports",
-        "a_redouble": false
+        "redouble": false
       },
       {
         "id": 7,
@@ -61,7 +61,7 @@
         "age": 12,
         "classe": "4ème",
         "specialite": "Musique",
-        "a_redouble": false
+        "redouble": false
       },
       {
         "id": 8,
@@ -70,7 +70,7 @@
         "age": 13,
         "classe": "6ème",
         "specialite": "Technologie",
-        "a_redouble": true
+        "redouble": true
       },
       {
         "id": 9,
@@ -79,7 +79,7 @@
         "age": 14,
         "classe": "5ème",
         "specialite": "Sciences",
-        "a_redouble": false
+        "redouble": false
       },
       {
         "id": 10,
@@ -88,7 +88,7 @@
         "age": 14,
         "classe": "5ème",
         "specialite": "Arts",
-        "a_redouble": false
+        "redouble": false
       },
       {
         "id": 11,
@@ -97,7 +97,7 @@
         "age": 15,
         "classe": "3ème",
         "specialite": "Arts",
-        "a_redouble": true
+        "redouble": true
       },
       {
         "id": 12,
@@ -106,7 +106,7 @@
         "age": 14,
         "classe": "4ème",
         "specialite": "Sciences",
-        "a_redouble": false
+        "redouble": false
       }
     ]
   }

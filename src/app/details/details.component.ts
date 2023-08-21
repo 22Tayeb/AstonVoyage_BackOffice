@@ -26,13 +26,20 @@ export class DetailsComponent implements OnInit {
       
       if(this.eleve){
         this.eleveForm =this.formBuilder.group({
-          nom:[this.eleve.nom,Validators.required],
-          prenom:[this.eleve.prenom],
-          age:[this.eleve.age],
-          classe:[this.eleve.classe],
-          specialite:[this.eleve.specialite],
+          nom:[this.eleve.nom,Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(15)])],
+          prenom:[this.eleve.prenom, Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(15)])],
+          age:[this.eleve.age, Validators.required],
+          classe:[this.eleve.classe, Validators.required],
+          specialite:[this.eleve.specialite, Validators.required],
           redouble:[this.eleve.redouble]
         })      
       }
+  }
+
+  onSubmit(): void {
+    if(this.eleveForm.valid){
+      console.log(this.eleveForm.value)
+    }
+    
   }
 }
