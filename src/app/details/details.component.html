@@ -1,41 +1,52 @@
-<form class="example-form" [formGroup]="eleveForm">
-<!-- Nom -->
-    <mat-form-field class="example-full-width">
-      <mat-label for="nom">Nom</mat-label>
+
+
+    <form class="example-form" [formGroup]="eleveForm">
+        <!-- Nom -->
+        <mat-form-field class="example-full-width">
+            <mat-label for="nom">Nom</mat-label>
       <input matInput placeholder="Ex. Pizza" id="nom" formControlName="nom" type="text">
     </mat-form-field>
 <!-- prénom -->
     <mat-form-field class="example-full-width">
         <mat-label for="prenom">Prénom</mat-label>
         <input matInput id="prenom" formControlName="prenom">
-      </mat-form-field>
-<!-- Âge -->
-      <mat-form-field class="example-full-width">
+    </mat-form-field>
+    <!-- Âge -->
+    <mat-form-field class="example-full-width">
         <mat-label for="age">Âge</mat-label>
-        <input matInput placeholder="Ex. Pizza" id="age"formControlName="age">
-      </mat-form-field>
-<!-- Classes -->
-      <mat-form-field>
+        <input matInput placeholder="Ex. Pizza" id="age"formControlName="age" type="number" min="10" max="18">
+    </mat-form-field>
+    <!-- Classes -->
+    <mat-form-field>
         <mat-label>Classes</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let classe of classes" [value]="classe.value">
-            {{classe.viewValue}}
-          </mat-option>
+        <mat-select formControlName="classe">
+            <mat-option *ngFor="let classe of classes" [value]="classe.value"  >
+                {{classe.viewValue}}
+            </mat-option>
         </mat-select>
-      </mat-form-field>
-<!-- Spécialité -->
-      <mat-form-field>
+    </mat-form-field>
+    <!-- Spécialité -->
+    <mat-form-field>
         <mat-label>Spécialités</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let specialite of specialites" [value]="specialite.value">
-            {{specialite.viewValue}}
-          </mat-option>
+        <mat-select formControlName="specialite">
+            <mat-option *ngFor="let specialite of specialites" [value]="specialite.value">
+                {{specialite.viewValue}}
+            </mat-option>
         </mat-select>
-      </mat-form-field>
-<!-- redoublé  -->
-        <mat-label for="redouble">À Redoublé</mat-label>
-        <mat-checkbox formControlName="redouble" id="redouble" class="example-margin"  checked="eleveForm.get('redouble').value"></mat-checkbox>  
-<pre>
-    {{eleveForm.value | json}}
-<!-- {{ eleve.value | json }} -->
-</pre>
+    </mat-form-field>
+    <!-- redoublé  -->
+    <br>
+    <mat-label for="redouble">Redoublé</mat-label>
+    <mat-checkbox formControlName="redouble" id="redouble" class="example-margin"  checked="eleveForm.get('redouble').value"></mat-checkbox>
+    
+        <section>
+            <div class="example-label"></div>
+            <div class="example-button-row">
+                
+                <button mat-flat-button color="primary" (click)="onSubmit()" [disabled]="eleveForm.invalid">Envoyé</button>
+                
+            </div>
+        </section>
+        <!-- <pre>
+            {{eleveForm.value | json}}
+        </pre> -->

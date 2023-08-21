@@ -20,6 +20,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ConnexionComponent,
     HomeComponent,
     DetailsComponent,
+    HeaderComponent,
     
   ],
   imports: [
