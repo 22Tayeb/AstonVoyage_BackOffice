@@ -1,0 +1,52 @@
+<table mat-table [dataSource]="source" class="mat-elevation-z8 demo-table">
+    <!-- Nom Column -->
+    <ng-container matColumnDef="nom">
+      <th  mat-header-cell *matHeaderCellDef>Nom</th>
+      <td mat-cell *matCellDef="let element">{{element.nom }}</td>
+    </ng-container>
+    <!-- prenom Column -->
+    <ng-container matColumnDef="prenom">
+        <th mat-header-cell *matHeaderCellDef>Prenom</th>
+        <td mat-cell *matCellDef="let element">{{element.prenom }}</td>
+    </ng-container>
+    <!-- âge Column -->
+    <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef>Âge</th>
+        <td mat-cell *matCellDef="let element">{{element.age }}</td>
+    </ng-container>
+    <!-- classe Column -->
+    <ng-container matColumnDef="classe">
+        <th mat-header-cell *matHeaderCellDef>Classe</th>
+        <td mat-cell *matCellDef="let element">{{element.classe }}</td>
+    </ng-container>
+    <!-- specialite Column -->
+    <ng-container matColumnDef="specialite">
+        <th mat-header-cell *matHeaderCellDef>Spécialité</th>
+        <td mat-cell *matCellDef="let element">{{element.specialite }}</td>
+    </ng-container>
+    <!-- a_redouble Column -->
+    <ng-container matColumnDef="redoubler">
+        <th mat-header-cell *matHeaderCellDef>A Redoublé</th>
+        <td mat-cell *matCellDef="let element">{{element.redouble ? "oui" : "non" }}</td>
+    </ng-container>
+    <!-- editer -->
+    <ng-container matColumnDef="editer">
+        <th mat-header-cell *matHeaderCellDef>Modifier</th>
+        <td mat-cell *matCellDef="let element">
+            <button (click)="goDetails(element.id)" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+    </ng-container>
+    <!-- supprimer -->
+    <ng-container matColumnDef="supprime">
+        <th mat-header-cell *matHeaderCellDef>Supprime</th>
+        <td mat-cell *matCellDef="let element">
+            <button (click)="deleteFromHtml(element.id)" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+    </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

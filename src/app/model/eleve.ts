@@ -26,6 +26,18 @@ export enum Classes{
     TROISIEME = "3ème"
 }
 
+export const enum EleveDisplayedColumns {
+    NOM = 'nom',
+    PRENOM = 'prenom',
+    AGE = 'age',
+    CLASSE = 'classe',
+    SPECIALITE = 'specialite',
+    REDOUBLER = 'redoubler',
+    EDITER = 'editer',
+    SUPPRIME = 'supprime'
+};
+
+
 
 export const specialites: SelectOptionHtmlElement[] = [
     {value: Specialite.ARTS, viewValue: Specialite.ARTS},
@@ -35,7 +47,7 @@ export const specialites: SelectOptionHtmlElement[] = [
     {value: Specialite.SPORTS, viewValue: Specialite.SPORTS},
     {value: Specialite.TECHNOLOGIE, viewValue: Specialite.TECHNOLOGIE},
   ];
-  export const classes: SelectOptionHtmlElement[] = [
+export const classes: SelectOptionHtmlElement[] = [
     {value: Classes.SIXIEME, viewValue: Classes.SIXIEME},
     {value: Classes.CINQUIEME, viewValue: Classes.CINQUIEME},
     {value: Classes.QUATRIEME, viewValue: Classes.QUATRIEME},
