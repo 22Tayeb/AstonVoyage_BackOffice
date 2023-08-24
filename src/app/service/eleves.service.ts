@@ -7,21 +7,29 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class ElevesService {
-  eleves!: Eleve[] 
-  private URL = 'assets/eleves.json';
+  private LOCAL_URL = 'assets/eleves.json';
+  private BACK_URL = 'http://localhost:3000';
+
   constructor(private http : HttpClient) { }
 
-  getEleve(): Observable<{eleves:Eleve[]}>{
-    return this.http.get<{eleves:Eleve[]}>(this.URL)
-    .pipe(
-      tap((response) => this.eleves = response.eleves)
-    )
+  getEleve(): Observable<Eleve[]> {
+    return this.http.get<Eleve[]>(this.BACK_URL+'/eleves')
   }
 
-  getEleveById(id:number):any{
-  if(this.eleves.length > 0){
-      const eleve = this.eleves.find(e => e.id === id);
-      return eleve ? eleve : undefined
-    }
+  getEleveById(id:number):any {
+    return this.http.get(this.BACK_URL+'/eleves/'+id)
+  }
+
+  create(eleve: any) {
+     return this.http.post(this.BACK_URL+'/eleves', eleve)
+  }
+
+  edit(id:number, eleve:Eleve):Observable<any> {
+    return this.http.put(this.BACK_URL+'/eleves/'+id,eleve)
+  } 
+
+  delete(id : number): Observable<{message:string}> {
+    return this.http.delete(this.BACK_URL+'/eleves/'+id) as Observable<{message:string}>
   }
 }
+
