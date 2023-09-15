@@ -21,6 +21,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HeaderComponent } from './header/header.component';
 import { CreateComponent } from './create/create.component';
 import { TableComponent } from './shared/table/table.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import { LoaderService } from './service/loader.servive';
 
 
 @NgModule({
@@ -51,9 +53,10 @@ import { TableComponent } from './shared/table/table.component';
    MatSelectModule,  
    MatInputModule,
    MatCheckboxModule, 
+   MatProgressSpinnerModule
    ],
     
-  providers: [],
+  providers: [LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

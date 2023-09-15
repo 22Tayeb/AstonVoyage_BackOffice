@@ -5,6 +5,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { TableService } from '../service/table.service';
 import { Role } from '../model/table';
 import { Subject, takeUntil } from 'rxjs';
+import { LoaderService } from '../service/loader.servive';
 
 @Component({
   selector: 'app-home',
@@ -16,13 +17,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   eleves!: Eleve[];
   displayedColumns: EleveDisplayedColumns[] = [];
   destroySubject$ = new Subject();
+  isLoading = false
 
   constructor(private elevesService:ElevesService, 
               private router:Router, 
               private tableService:TableService,
-              private route : ActivatedRoute){}
+              private route : ActivatedRoute,
+              private loaderService:LoaderService
+              ){}
 
   ngOnInit(): void {
+  this.loaderService.loading.subscribe((loading) => {
+    this.isLoading = loading
+  });
   this.displayedColumns = this.tableService.getDisplayColumn(Role.ELEVE);
  
   this.eleves = this.route.snapshot.data['eleves']

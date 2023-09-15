@@ -1,7 +1,5 @@
 <div class="global">
-
-    
-    <ng-container *ngIf="eleveForm">
+    <ng-container *ngIf=" eleve; else loading" >
         
         
         <form class="example-form" [formGroup]="eleveForm">
@@ -32,29 +30,27 @@
             <!-- Spécialité -->
             <mat-form-field>
                 <mat-label>Spécialités</mat-label>
-        <mat-select formControlName="specialite">
-            <mat-option *ngFor="let specialite of specialites" [value]="specialite.value">
-                {{specialite.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    <!-- redoublé  -->
-    <br>
-    <mat-label for="redouble">Redoublé</mat-label>
-    <mat-checkbox formControlName="redouble" id="redouble" class="example-margin"  checked="eleveForm.get('redouble').value"></mat-checkbox>
-    <!-- bouton validé -->
-    <section>
-        <div class="example-label"></div>
-        <div class="example-button-row">
-            
-            <button mat-flat-button color="primary" (click)="onSubmit(eleve.id)" [disabled]="eleveForm.invalid">Validé</button>
-            
-        </div>
-    </section>
-</form>
-</ng-container>
-
-<!-- <pre>
-    {{eleveForm.value | json}}
-</pre> -->
+                <mat-select formControlName="specialite">
+                    <mat-option *ngFor="let specialite of specialites" [value]="specialite.value">
+                        {{specialite.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-- redoublé  -->
+            <br>
+            <mat-label for="redouble">Redoublé</mat-label>
+            <mat-checkbox formControlName="redouble" id="redouble" class="example-margin"  checked="eleveForm.get('redouble').value"></mat-checkbox>
+            <!-- bouton validé -->
+            <section>
+                <div class="example-label"></div>
+                <div class="example-button-row">
+                    <button mat-flat-button color="primary" (click)="onSubmit(eleve.id)" [disabled]="eleveForm.invalid">Validé</button>
+                </div>
+            </section>
+        </form>
+    </ng-container>
 </div>
+
+<ng-template #loading>
+    <mat-spinner></mat-spinner>
+</ng-template>
