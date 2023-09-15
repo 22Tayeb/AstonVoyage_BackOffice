@@ -1,10 +1,18 @@
-<ng-container *ngIf="eleves !== undefined">
+<div class="global">
+
+<ng-container *ngIf="eleves; else loading">
     <app-table
      [source]="eleves"
      [displayedColumns]="displayedColumns" 
      (deleteNotification)="deleteFromHtml($event)"
-     (editNotification)="goDetails($event)"></app-table>
+     (editNotification)="goDetails($event)">
+    </app-table>
      
       <button mat-raised-button (click)="goCreate()" color="primary">+</button>
 </ng-container>
 
+    <ng-template #loading>
+        <mat-spinner></mat-spinner>
+    </ng-template>
+</div>
+    

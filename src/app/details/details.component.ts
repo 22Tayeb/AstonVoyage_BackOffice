@@ -4,6 +4,7 @@ import { ElevesService } from '../service/eleves.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { specialites, classes } from './../model/eleve'
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-details',
@@ -23,8 +24,16 @@ export class DetailsComponent implements OnInit {
   }
   ngOnInit(): void {
       const eleveId = +this.route.snapshot.params['id'];
-      this.elevesService.getEleveById(eleveId).subscribe(
+
+
+      this.elevesService.getEleveById(eleveId)
+      .pipe(
+        delay(2000),
+      )
+      .subscribe(
+
         (response:any)=>{
+
           this.eleve =  response;
           this.eleveForm =this.formBuilder.group({
             nom:[this.eleve.nom,Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(15)])],
