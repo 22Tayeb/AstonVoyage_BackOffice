@@ -8,7 +8,7 @@ import { Observable, tap } from 'rxjs';
 })
 export class ElevesService {
   private LOCAL_URL = 'assets/eleves.json';
-  private BACK_URL = 'http://localhost:3000';
+  private BACK_URL = 'https://back-shcool.vercel.app';
 
   constructor(private http : HttpClient) { }
 
