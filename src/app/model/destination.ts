@@ -14,8 +14,10 @@ export const enum DestinationDisplayedColumns {
     IMAGE = 'image',
     COMPAGNIE_VOL = 'compagnie_vol',
     NUM_VOL = 'num_vol',
-    HEURE_DEPART = 'heure_depart', 
+    AEROPORT_DEPART = 'aeroport_depart', 
+    HEURE_DEPART = 'heure_depart',
     HEURE_ARRIVEE = 'heure_arrivee',
+    AEROPORT_ARRIVEE = 'aeroport_arrivee',
     EDITER = 'editer',
     SUPPRIME = 'supprime'
 };

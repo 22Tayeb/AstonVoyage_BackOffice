@@ -34,7 +34,9 @@ export class CreateComponent implements OnInit {
             image:[null, Validators.required],
             compagnie_vol:[null, Validators.required],
             num_vol:[null, Validators.required],
+            aeroport_depart:[null, Validators.required],
             heure_depart:[null, Validators.required],
+            aeroport_arrivee:[null, Validators.required],
             heure_arrivee:[null, Validators.required]
           })      
         }
@@ -67,7 +69,9 @@ onFileChange(event: any) {
      vols:{
       compagnie_vol: this.destinationForm.value.compagnie_vol,
       num_vol: this.destinationForm.value.num_vol,
+      aeroport_depart: this.destinationForm.value.aeroport_depart,
       heure_depart: this.destinationForm.value.heure_depart,
+      aeroport_arrivee: this.destinationForm.value.aeroport_arrivee,
       heure_arrivee:this.destinationForm.value.heure_arrivee,
      }
  }

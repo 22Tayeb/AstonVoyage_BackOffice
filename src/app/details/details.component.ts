@@ -40,7 +40,9 @@ export class DetailsComponent implements OnInit {
             image:['', Validators.required],
             compagnie_vol:[this.destination.vols.compagnie_vol, Validators.required],
             num_vol:[this.destination.vols.num_vol, Validators.required],
+            aeroport_depart:[this.destination.vols.aeroport_depart, Validators.required],
             heure_depart:[this.destination.vols.heure_depart, Validators.required],
+            aeroport_arrivee:[this.destination.vols.aeroport_arrivee, Validators.required],
             heure_arrivee:[this.destination.vols.heure_arrivee, Validators.required],
           })      
         }
@@ -73,7 +75,9 @@ export class DetailsComponent implements OnInit {
       _id: this.destination.vols._id,
       compagnie_vol: this.destinationForm.value.compagnie_vol,
       num_vol: this.destinationForm.value.num_vol,
+      aeroport_depart: this.destinationForm.value.aeroport_depart,
       heure_depart: this.destinationForm.value.heure_depart,
+      aeroport_arrivee: this.destinationForm.value.aeroport_arrivee,
       heure_arrivee:this.destinationForm.value.heure_arrivee,
      }
  }

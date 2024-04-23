@@ -26,10 +26,20 @@
         <th mat-header-cell *matHeaderCellDef>numéro de vol</th>
         <td mat-cell *matCellDef="let element">{{element.vols.num_vol }}</td>
     </ng-container>
+    <!-- aerport_depart -->
+    <ng-container matColumnDef="aeroport_depart">
+        <th mat-header-cell *matHeaderCellDef>Aeroport de Départ</th>
+        <td mat-cell *matCellDef="let element">{{element.vols.aeroport_depart }}</td>
+    </ng-container>
     <!-- heure_depart -->
     <ng-container matColumnDef="heure_depart">
         <th mat-header-cell *matHeaderCellDef>Heure De Départ</th>
         <td mat-cell *matCellDef="let element">{{element.vols.heure_depart }}</td>
+    </ng-container>
+    <!-- aerport_arrivee -->
+    <ng-container matColumnDef="aeroport_arrivee">
+        <th mat-header-cell *matHeaderCellDef>Aeroport d'Arrivee</th>
+        <td mat-cell *matCellDef="let element">{{element.vols.aeroport_arrivee }}</td>
     </ng-container>
     <!-- h d'arrivee -->
     <ng-container matColumnDef="heure_arrivee">

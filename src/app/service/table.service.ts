@@ -15,7 +15,9 @@ getDisplayColumn(role?:string) {
             DestinationDisplayedColumns.IMAGE,
             DestinationDisplayedColumns.COMPAGNIE_VOL,
             DestinationDisplayedColumns.NUM_VOL,
+            DestinationDisplayedColumns.AEROPORT_DEPART,
             DestinationDisplayedColumns.HEURE_DEPART,
+            DestinationDisplayedColumns.AEROPORT_ARRIVEE,
             DestinationDisplayedColumns.HEURE_ARRIVEE,
             DestinationDisplayedColumns.EDITER,
             DestinationDisplayedColumns.SUPPRIME
