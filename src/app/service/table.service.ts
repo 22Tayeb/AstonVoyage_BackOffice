@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EleveDisplayedColumns } from '../model/eleve';
-import { Role } from '../model/table';
+import { DestinationDisplayedColumns } from '../model/destination';
 
 
 @Injectable({
@@ -8,19 +7,20 @@ import { Role } from '../model/table';
 })
 export class TableService {
 
-getDisplayColumn(role:string) {
-    if(role === Role.ELEVE) {
+getDisplayColumn(role?:string) {
+    //if(role === Role.ELEVE) {
         return [
-            EleveDisplayedColumns.NOM,
-            EleveDisplayedColumns.PRENOM,
-            EleveDisplayedColumns.AGE,
-            EleveDisplayedColumns.CLASSE,
-            EleveDisplayedColumns.SPECIALITE,
-            EleveDisplayedColumns.REDOUBLER,
-            EleveDisplayedColumns.EDITER,
-            EleveDisplayedColumns.SUPPRIME
+            DestinationDisplayedColumns.NOM_DESTINATION,
+            DestinationDisplayedColumns.DESCRIPTION,
+            DestinationDisplayedColumns.IMAGE,
+            DestinationDisplayedColumns.COMPAGNIE_VOL,
+            DestinationDisplayedColumns.NUM_VOL,
+            DestinationDisplayedColumns.HEURE_DEPART,
+            DestinationDisplayedColumns.HEURE_ARRIVEE,
+            DestinationDisplayedColumns.EDITER,
+            DestinationDisplayedColumns.SUPPRIME
           ]
-    }
+    //}
     // CODE EVOLUTIF
     return []
   }

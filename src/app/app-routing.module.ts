@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
-import { EleveResolver } from './resolver/eleve.resolver';
+import { DestinationResolver } from './resolver/destination.resolver';
 import { AuthGuard } from './guard/eleve.guard';
 
 
@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     resolve: { 
-      eleves : EleveResolver
+      destination : DestinationResolver
     },
     canActivate:[AuthGuard]
   },

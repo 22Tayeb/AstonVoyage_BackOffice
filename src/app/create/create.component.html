@@ -1,48 +1,51 @@
 <div class="global">
-    <ng-container *ngIf="eleveForm">  
-        <form class="example-form" [formGroup]="eleveForm">
-            <!-- Nom -->
+    <ng-container *ngIf="destinationForm">
+        <!-- <form  method="post" enctype="multipart/form-data"> -->
+  <!-- <input type="file" name="avatar" (change)="onFileChange($event)" /> -->
+<!-- </form>   -->
+        <form class="example-form" [formGroup]="destinationForm">
+            <!-- Nom_destination -->
             <mat-form-field class="example-full-width">
-                <mat-label for="nom">Nom</mat-label>
-                <input matInput placeholder="Ex. Legrand" id="nom" formControlName="nom" type="text">
+                <mat-label for="nom">nom_destination</mat-label>
+                <input matInput placeholder="ex: marseille" id="nom_destination" formControlName="nom_destination" type="text">
             </mat-form-field>
-            <!-- prénom -->
+            <!-- description -->
             <mat-form-field class="example-full-width">
-                <mat-label for="prenom">Prénom</mat-label>
-                <input matInput id="prenom" placeholder="Ex. Luc" formControlName="prenom">
+                <mat-label for="description">description</mat-label>
+                <input matInput id="description" formControlName="description">
             </mat-form-field>
-            <!-- Âge -->
+            <!-- image -->
+            <!-- <mat-form-field class="example-full-width">  -->
+            <mat-label for="image">image</mat-label>
+            <input type="file" formControlName="image" (change)="onFileChange($event)">
+            <!-- <button type="button" (click)="download()">Download</button>
+            <img  src="http://localhost:3000/kesh.jpg" alt=""/>  -->
+            <!-- </mat-form-field>   -->
+            <!-- compagnie aérienne -->
             <mat-form-field class="example-full-width">
-                <mat-label for="age">Âge</mat-label>
-                <input matInput placeholder="Ex. 15" id="age"formControlName="age" type="number" min="10" max="18">
+                <mat-label for="compagnie_vol">Compagnie Aérienne</mat-label>
+                <input matInput id="compagnie_vol" formControlName="compagnie_vol">
             </mat-form-field>
-            <!-- Classes -->
-            <mat-form-field>
-                <mat-label>Classes</mat-label>
-                <mat-select formControlName="classe">
-                    <mat-option *ngFor="let classe of classes" [value]="classe.value"  >
-                        {{classe.viewValue}}
-                    </mat-option>
-                </mat-select>
+            
+            <!-- numero de vol -->
+            <mat-form-field class="example-full-width">
+                <mat-label for="num_vol">Numéro de vol</mat-label>
+                <input matInput id="num_vol" formControlName="num_vol">
             </mat-form-field>
-            <!-- Spécialité -->
-            <mat-form-field>
-                <mat-label>Spécialités</mat-label>
-                <mat-select formControlName="specialite">
-                    <mat-option *ngFor="let specialite of specialites" [value]="specialite.value">
-                    {{specialite.viewValue}}
-                    </mat-option>
-                </mat-select>
+            <!-- heure de depart -->
+            <mat-form-field class="example-full-width">
+                <mat-label for="heure_depart">Heure de depart</mat-label>
+                <input matInput id="heure_depart" formControlName="heure_depart">
             </mat-form-field>
-            <!-- redoublé  -->
-            <br>
-            <mat-label for="redouble">Redoublé</mat-label>
-            <mat-checkbox formControlName="redouble" id="redouble" class="example-margin"  checked="eleveForm.get('redouble').value"></mat-checkbox>
-    
+            <!-- heure d'arrivee  -->
+            <mat-form-field class="example-full-width">
+                <mat-label for="heure_arrivee">Heure d'Arrivée</mat-label>
+                <input matInput id="heure_arrivee" formControlName="heure_arrivee">
+            </mat-form-field>
             <section>
                 <div class="example-label"></div>
                 <div class="example-button-row">
-                    <button mat-flat-button color="primary"  (click)="created()" [disabled]="eleveForm.invalid">Envoyé</button>
+                    <button mat-flat-button color="primary"  (click)="created()" [disabled]="destinationForm.invalid">Envoyé</button>
                 </div>
             </section>
         </form>

@@ -1,7 +1,7 @@
 import { SelectOptionHtmlElement } from "./form-elements";
 
 export interface Eleve{
-    id : number,
+    id? : number,
     nom : string,
     prenom: string,
     age: number,
@@ -26,16 +26,16 @@ export enum Classes{
     TROISIEME = "3ème"
 }
 
-export const enum EleveDisplayedColumns {
-    NOM = 'nom',
-    PRENOM = 'prenom',
-    AGE = 'age',
-    CLASSE = 'classe',
-    SPECIALITE = 'specialite',
-    REDOUBLER = 'redoubler',
-    EDITER = 'editer',
-    SUPPRIME = 'supprime'
-};
+// export const enum EleveDisplayedColumns {
+//     NOM = 'nom',
+//     PRENOM = 'prenom',
+//     AGE = 'age',
+//     CLASSE = 'classe',
+//     SPECIALITE = 'specialite',
+//     REDOUBLER = 'redoubler',
+//     EDITER = 'editer',
+//     SUPPRIME = 'supprime'
+// };
 
 
 

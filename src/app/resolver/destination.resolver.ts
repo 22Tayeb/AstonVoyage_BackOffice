@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Resolve } from '@angular/router';
 import { Observable, tap } from 'rxjs';
-import { ElevesService } from '../service/eleves.service';
+import { DestinationService } from '../service/destination.service';
 import { LoaderService } from '../service/loader.servive';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class EleveResolver implements Resolve<Observable<any>> {
+export class DestinationResolver implements Resolve<Observable<any>> {
 
-  constructor(private elevesService:ElevesService,private loaderService:LoaderService) {}
+  constructor(private destinationService:DestinationService, private loaderService:LoaderService) {}
 
   resolve(): Observable<any> {
     this.loaderService.setLoading(true)
-    return this.elevesService.getEleve()
+    return this.destinationService.getDestination()
     .pipe(
       tap(res => {
          setTimeout(() => { this.loaderService.setLoading(false)},2000) 

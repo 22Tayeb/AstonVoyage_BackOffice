@@ -23,6 +23,7 @@ import { CreateComponent } from './create/create.component';
 import { TableComponent } from './shared/table/table.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { LoaderService } from './service/loader.servive';
+import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { LoaderService } from './service/loader.servive';
    MatSelectModule,  
    MatInputModule,
    MatCheckboxModule, 
-   MatProgressSpinnerModule
+   MatProgressSpinnerModule,
+   NgxMatFileInputModule
    ],
     
   providers: [LoaderService],

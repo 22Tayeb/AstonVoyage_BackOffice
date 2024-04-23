@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Eleve, EleveDisplayedColumns } from '../model/eleve';
-import { ElevesService } from '../service/eleves.service';
+import { Destination, DestinationDisplayedColumns } from '../model/destination';
+import { DestinationService } from '../service/destination.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { TableService } from '../service/table.service';
 import { Role } from '../model/table';
@@ -14,17 +14,17 @@ import { LoaderService } from '../service/loader.servive';
 
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  eleves!: Eleve[];
-  displayedColumns: EleveDisplayedColumns[] = [];
+  destination!: Destination[];
+  displayedColumns: any[] = [];
   destroySubject$ = new Subject();
   isLoading = false
+  // destination: any;
 
-  constructor(private elevesService:ElevesService, 
+  constructor(private destinationService:DestinationService, 
               private router:Router, 
               private tableService:TableService,
               private route : ActivatedRoute,
-              private loaderService:LoaderService
-              ){}
+              private loaderService:LoaderService){}
 
   ngOnInit(): void {
   this.loaderService.loading.subscribe((loading) => {
@@ -32,29 +32,31 @@ export class HomeComponent implements OnInit, OnDestroy {
   });
   this.displayedColumns = this.tableService.getDisplayColumn(Role.ELEVE);
  
-  this.eleves = this.route.snapshot.data['eleves']
+  this.destination = this.route.snapshot.data['destination']
+  console.log(this.destination)
   }
 
-  goDetails(id:number){
+  goDetails(id:string){
     this.router.navigate([`/details/${id}`]);
+    console.log(id);
   }
 
   goCreate(){
     this.router.navigate(['/create']);
   }
 
- deleteFromHtml(id:number): void {
-  this.elevesService.delete(id)
+ deleteFromHtml(id:string): void {
+  this.destinationService.delete(id)
   .pipe(
     takeUntil(this.destroySubject$)
   )
   .subscribe(()=>{
-    this.elevesService.getEleve()
+    this.destinationService.getDestination()
     .pipe(
       takeUntil(this.destroySubject$)
     )
-    .subscribe((elevesfromback)=>{
-      this.eleves = elevesfromback
+    .subscribe((destinationfromback)=>{
+      this.destination = destinationfromback
     })
   })
  }
