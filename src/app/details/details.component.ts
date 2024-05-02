@@ -15,6 +15,8 @@ export class DetailsComponent implements OnInit {
   public destinationForm! : FormGroup 
   destination!: Destination;
   imageUrl: any;
+  date_depart!:Date;
+  date_retour!:Date;
 
   constructor(private destinationService: DestinationService,
               private route: ActivatedRoute,
@@ -39,8 +41,8 @@ export class DetailsComponent implements OnInit {
             description:[this.destination.description, Validators.required],
             image:['', Validators.required],
             prix:[this.destination.prix, Validators.required],
-            date_depart:[this.destination.date_depart, Validators.required],
-            date_retour: [this.destination.date_retour, Validators.required],
+            date_depart:[new Date(this.destination.date_depart), Validators.required],
+            date_retour: [new Date(this.destination.date_retour), Validators.required],
             compagnie_vol:[this.destination.vols.compagnie_vol, Validators.required],
             num_vol:[this.destination.vols.num_vol, Validators.required],
             aeroport_depart:[this.destination.vols.aeroport_depart, Validators.required],
