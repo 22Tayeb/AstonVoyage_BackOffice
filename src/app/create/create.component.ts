@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 
 
 
+
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -18,6 +19,8 @@ export class CreateComponent implements OnInit {
   public destinationForm! : FormGroup 
   destination!: Destination;
   imageUrl:any
+  date_depart!:Date;
+  date_retour!:Date;
 
   constructor(private destinationService: DestinationService,
               private formBuilder: FormBuilder,
@@ -32,12 +35,17 @@ export class CreateComponent implements OnInit {
             nom_destination:[null,Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(15)])],
             description:[null,Validators.required],
             image:[null, Validators.required],
+            prix:[null, Validators.required],
+            date_depart:[null, Validators.required],
+            date_retour:[null,Validators.required],
             compagnie_vol:[null, Validators.required],
             num_vol:[null, Validators.required],
             aeroport_depart:[null, Validators.required],
             heure_depart:[null, Validators.required],
             aeroport_arrivee:[null, Validators.required],
-            heure_arrivee:[null, Validators.required]
+            heure_arrivee:[null, Validators.required],
+            duree_vol:[null, Validators.required],
+            info_comp:[null, Validators.required],
           })      
         }
       )
@@ -66,6 +74,9 @@ onFileChange(event: any) {
      nom_destination: this.destinationForm.value.nom_destination,
      description: this.destinationForm.value.description,
      image: this.imageUrl,
+     prix: this.destinationForm.value.prix, 
+     date_depart: this.destinationForm.value.date_depart,
+     date_retour: this.destinationForm.value.date_retour,
      vols:{
       compagnie_vol: this.destinationForm.value.compagnie_vol,
       num_vol: this.destinationForm.value.num_vol,
@@ -73,6 +84,8 @@ onFileChange(event: any) {
       heure_depart: this.destinationForm.value.heure_depart,
       aeroport_arrivee: this.destinationForm.value.aeroport_arrivee,
       heure_arrivee:this.destinationForm.value.heure_arrivee,
+      duree_vol: this.destinationForm.value.duree_vol,
+      info_comp: this.destinationForm.value.info_comp,
      }
  }
 

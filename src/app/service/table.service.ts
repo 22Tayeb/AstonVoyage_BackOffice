@@ -13,6 +13,8 @@ getDisplayColumn(role?:string) {
             DestinationDisplayedColumns.NOM_DESTINATION,
             DestinationDisplayedColumns.DESCRIPTION,
             DestinationDisplayedColumns.IMAGE,
+            DestinationDisplayedColumns.DATE_DEPART,
+            DestinationDisplayedColumns.DATE_RETOUR,
             DestinationDisplayedColumns.COMPAGNIE_VOL,
             DestinationDisplayedColumns.NUM_VOL,
             DestinationDisplayedColumns.AEROPORT_DEPART,

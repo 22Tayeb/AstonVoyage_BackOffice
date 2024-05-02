@@ -38,12 +38,17 @@ export class DetailsComponent implements OnInit {
             nom_destination:[this.destination.nom_destination,Validators.required],
             description:[this.destination.description, Validators.required],
             image:['', Validators.required],
+            prix:[this.destination.prix, Validators.required],
+            date_depart:[this.destination.date_depart, Validators.required],
+            date_retour: [this.destination.date_retour, Validators.required],
             compagnie_vol:[this.destination.vols.compagnie_vol, Validators.required],
             num_vol:[this.destination.vols.num_vol, Validators.required],
             aeroport_depart:[this.destination.vols.aeroport_depart, Validators.required],
             heure_depart:[this.destination.vols.heure_depart, Validators.required],
             aeroport_arrivee:[this.destination.vols.aeroport_arrivee, Validators.required],
             heure_arrivee:[this.destination.vols.heure_arrivee, Validators.required],
+            duree_vol:[this.destination.vols.duree_vol, Validators.required],
+            info_comp:[this.destination.vols.info_comp, Validators.required],
           })      
         }
       )
@@ -71,6 +76,9 @@ export class DetailsComponent implements OnInit {
      nom_destination: this.destinationForm.value.nom_destination,
      description: this.destinationForm.value.description,
      image: this.imageUrl,
+     prix: this.destinationForm.value.prix,
+     date_depart: this.destinationForm.value.date_depart,
+     date_retour: this.destinationForm.value.date_retour,
      vols:{
       _id: this.destination.vols._id,
       compagnie_vol: this.destinationForm.value.compagnie_vol,
@@ -79,6 +87,8 @@ export class DetailsComponent implements OnInit {
       heure_depart: this.destinationForm.value.heure_depart,
       aeroport_arrivee: this.destinationForm.value.aeroport_arrivee,
       heure_arrivee:this.destinationForm.value.heure_arrivee,
+      duree_vol:this.destinationForm.value.duree_vol,
+      info_comp:this.destinationForm.value.info_comp,
      }
  }
     if(this.destinationForm.valid||true){

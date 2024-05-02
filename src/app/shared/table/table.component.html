@@ -16,6 +16,21 @@
             <img  [src]="element.image" alt="" class="img_destination"/>
         </td>
     </ng-container>
+    <!-- date depart -->
+    <ng-container matColumnDef="date_depart">
+        <th mat-header-cell *matHeaderCellDef>date depart</th>
+        <td mat-cell *matCellDef="let element">{{element.date_depart | date: 'shortDate' }}</td>
+    </ng-container>
+    <!-- date retour -->
+        <ng-container matColumnDef="date_retour">
+        <th mat-header-cell *matHeaderCellDef>date retour</th>
+        <td mat-cell *matCellDef="let element">{{element.date_retour | date: 'shortDate' }}</td>
+    </ng-container>
+    <!-- prix -->
+    <ng-container matColumnDef="prix">
+        <th mat-header-cell *matHeaderCellDef>Heure D'arrivée</th>
+        <td mat-cell *matCellDef="let element">{{element.prix }}</td>
+    </ng-container>
     <!-- compagnie vol -->
     <ng-container matColumnDef="compagnie_vol">
         <th mat-header-cell *matHeaderCellDef>compagnie aérienne</th>
@@ -45,6 +60,16 @@
     <ng-container matColumnDef="heure_arrivee">
         <th mat-header-cell *matHeaderCellDef>Heure D'arrivée</th>
         <td mat-cell *matCellDef="let element">{{element.vols.heure_arrivee }}</td>
+    </ng-container>
+    <!-- duree_vol -->
+    <ng-container matColumnDef="duree_vol">
+        <th mat-header-cell *matHeaderCellDef>Durée de vol</th>
+        <td mat-cell *matCellDef="let element">{{element.vols.duree_vol }}</td>
+    </ng-container>
+    <!-- info_comp -->
+    <ng-container matColumnDef="info_comp">
+        <th mat-header-cell *matHeaderCellDef>info complémentaire</th>
+        <td mat-cell *matCellDef="let element">{{element.vols.info_comp }}</td>
     </ng-container>
     
     <!-- editer -->

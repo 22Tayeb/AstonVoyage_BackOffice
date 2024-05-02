@@ -16,8 +16,28 @@
             <!-- Image -->
                              <mat-label for="image">image</mat-label>
                         <img  [src]="imageUrl" class="image" alt=""/>  
-
             <input type="file" formControlName="image" (change)="onFileChange($event)">
+            <!-- prix -->
+             <mat-form-field class="example-full-width">
+                <mat-label for="prix">Prix</mat-label>
+                <input matInput id="prix" formControlName="prix" type="text">
+            </mat-form-field>
+            <!-- date de depart-->
+             <mat-form-field>
+            <mat-label>changer de date de depart</mat-label>
+            <input matInput id="date_depart" formControlName="date_depart" [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <!-- date de retour -->
+            <mat-form-field>
+            <mat-label>changer la date de retour</mat-label>
+            <input matInput id="date_retour" formControlName="date_retour" [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
             <!-- compagnie vol -->
              <mat-form-field class="example-full-width">
                 <mat-label for="compagnie_vol">Compagnie Aérienne</mat-label>
@@ -47,6 +67,16 @@
              <mat-form-field class="example-full-width">
                 <mat-label for="heure_arrivee">Heure D'arrivee</mat-label>
                 <input matInput id="heure_arrivee" formControlName="heure_arrivee" type="text">
+            </mat-form-field>
+            <!-- duree vol -->
+             <mat-form-field class="example-full-width">
+                <mat-label for="duree_vol">Durée de vol</mat-label>
+                <input matInput id="duree_vol" formControlName="duree_vol" type="text">
+            </mat-form-field>
+            <!-- info complementaires -->
+             <mat-form-field class="example-full-width">
+                <mat-label for="info_comp">Info complémentaire</mat-label>
+                <input matInput id="info_comp" formControlName="info_comp" type="text">
             </mat-form-field>
 
             <!-- bouton validé -->
