@@ -24,6 +24,9 @@ import { TableComponent } from './shared/table/table.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { LoaderService } from './service/loader.servive';
 import { NgxMatFileInputModule } from '@angular-material-components/file-input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+ import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -55,10 +58,14 @@ import { NgxMatFileInputModule } from '@angular-material-components/file-input';
    MatInputModule,
    MatCheckboxModule, 
    MatProgressSpinnerModule,
-   NgxMatFileInputModule
+   NgxMatFileInputModule,
+   MatDatepickerModule,
+   TooltipModule.forRoot(),
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
    ],
     
-  providers: [LoaderService],
+  providers: [LoaderService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
