@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -21,7 +22,7 @@ export class CreateComponent implements OnInit {
   imageUrl:any
   date_depart!:Date;
   date_retour!:Date;
-
+public BACK_URL=environment
   constructor(private destinationService: DestinationService,
               private formBuilder: FormBuilder,
               private router: Router,
@@ -57,7 +58,7 @@ onFileChange(event: any) {
   const formData = new FormData();
   formData.append('file', file);
 
-  this.http.post('http://localhost:3000/api/destination/upload', formData)
+  this.http.post(this.BACK_URL.apiURL+'/destination/upload', formData)
     .subscribe((res:any) => {
       console.log(res)
       this.imageUrl = res.url;

@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { delay } from 'rxjs';
 import { Destination } from '../model/destination';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -17,7 +17,7 @@ export class DetailsComponent implements OnInit {
   imageUrl: any;
   date_depart!:Date;
   date_retour!:Date;
-
+public BACK_URL=environment
   constructor(private destinationService: DestinationService,
               private route: ActivatedRoute,
               private router:Router,
@@ -61,7 +61,7 @@ export class DetailsComponent implements OnInit {
   const formData = new FormData();
   formData.append('file', file);
 
-  this.http.post('http://localhost:3000/api/destination/upload', formData)
+  this.http.post(this.BACK_URL.apiURL+'/destination/upload', formData)
     .subscribe((res:any) => {
       console.log(res)
       this.imageUrl = res.url;
