@@ -13,24 +13,24 @@ export class DestinationService {
   constructor(private http : HttpClient) { }
 
   getDestination(): Observable<Destination[]> {
-  return this.http.get<Destination[]>(this.BACK_URL+'/destination/getAllDest')
+  return this.http.get<Destination[]>(this.BACK_URL+'/api/destination/getAllDest')
   }
 
 
   getDestinationById(id:string):any {
-    return this.http.get(this.BACK_URL+'/destination/getDest/'+id)
+    return this.http.get(this.BACK_URL+'/api/destination/getDest/'+id)
   }
 
   create(destination: any) {
-     return this.http.post(this.BACK_URL+'/destination/createDest', destination)
+     return this.http.post(this.BACK_URL+'/api/destination/createDest', destination)
   }
 
   edit(id:string, destination:Destination):Observable<any> {
-    return this.http.put(this.BACK_URL+'/destination/updateDest/'+id,destination)
+    return this.http.put(this.BACK_URL+'/api/destination/updateDest/'+id,destination)
   } 
 
   delete(id : string): Observable<{message:string}> {
-    return this.http.delete(this.BACK_URL+'/destination/deleteDest/'+id) as Observable<{message:string}>
+    return this.http.delete(this.BACK_URL+'/api/destination/deleteDest/'+id) as Observable<{message:string}>
   }
 }
 

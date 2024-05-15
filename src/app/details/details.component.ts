@@ -61,10 +61,9 @@ public BACK_URL=environment
   const formData = new FormData();
   formData.append('file', file);
 
-  this.http.post(this.BACK_URL.apiURL+'/destination/upload', formData)
+  this.http.post(this.BACK_URL.apiURL+'/api/destination/upload', formData)
     .subscribe((res:any) => {
-      console.log(res)
-      this.imageUrl = res.url;
+      this.imageUrl = res.filename;
     },
     (error) => {
       console.log(error)
