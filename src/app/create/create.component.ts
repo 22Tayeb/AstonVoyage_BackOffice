@@ -55,6 +55,12 @@ public BACK_URL=environment
 
 onFileChange(event: any) {
   const file = event.target.files[0];
+  if (file) {
+    const validTypes = ['image/jpeg', 'image/png'];
+    if (!validTypes.includes(file.type)) {
+      alert('Type de fichier non valide. Veuillez sélectionner une image JPEG ou PNG.');
+      return;
+    }
   const formData = new FormData();
   formData.append('file', file);
 
@@ -66,6 +72,7 @@ onFileChange(event: any) {
     (error) => {
       console.log(error)
     });
+}
 }
 
 
@@ -94,6 +101,9 @@ onFileChange(event: any) {
     this.destinationService.create(destination).subscribe(
       ()=>{
         this.router.navigateByUrl("/home")
+      },
+      ()=> {
+        alert('Creation impossible erreur serveur')
       }
     )
   }

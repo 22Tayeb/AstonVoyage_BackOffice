@@ -18,7 +18,7 @@
             <!-- image -->
             <!-- <mat-form-field class="example-full-width">  -->
             <mat-label for="image">image</mat-label>
-            <input type="file" formControlName="image" (change)="onFileChange($event)">
+            <input type="file" formControlName="image" accept="image/jpeg, image/png" (change)="onFileChange($event)">
             <!-- prix -->
             <mat-form-field class="example-full-width">
                 <mat-label for="prix">Prix</mat-label>
