@@ -22,7 +22,7 @@
             <!-- prix -->
             <mat-form-field class="example-full-width">
                 <mat-label for="prix">Prix</mat-label>
-                <input matInput id="prix" formControlName="prix">
+                <input matInput type="number" id="prix" formControlName="prix">
             </mat-form-field>
             <!-- date depart -->
                     <input type="text" placeholder="date de depart" class="form-control" bsDatepicker formControlName="date_depart">
@@ -46,7 +46,7 @@
             <!-- heure de depart -->
             <mat-form-field class="example-full-width">
                 <mat-label for="heure_depart">Heure de depart</mat-label>
-                <input matInput id="heure_depart" formControlName="heure_depart">
+                <input matInput id="heure_depart" type="time" formControlName="heure_depart">
             </mat-form-field>
             <!-- aeroport d'arrivee -->
             <mat-form-field class="example-full-width">
@@ -56,12 +56,12 @@
             <!-- heure d'arrivee  -->
             <mat-form-field class="example-full-width">
                 <mat-label for="heure_arrivee">Heure d'Arrivée</mat-label>
-                <input matInput id="heure_arrivee" formControlName="heure_arrivee">
+                <input matInput id="heure_arrivee" type="time" formControlName="heure_arrivee">
             </mat-form-field>
             <!-- durée de vol -->
             <mat-form-field class="example-full-width">
                 <mat-label for="duree_vol">Durée de vol</mat-label>
-                <input matInput id="duree_vol" formControlName="duree_vol">
+                <input type="number" matInput id="duree_vol" formControlName="duree_vol">
             </mat-form-field>
             <!-- info complémentaires -->
             <mat-form-field class="example-full-width">
