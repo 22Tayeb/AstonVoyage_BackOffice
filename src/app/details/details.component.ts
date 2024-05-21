@@ -39,7 +39,6 @@ public BACK_URL=environment
           this.destinationForm =this.formBuilder.group({
             nom_destination:[this.destination.nom_destination,Validators.required],
             description:[this.destination.description, Validators.required],
-            image:['', Validators.required],
             prix:[this.destination.prix, Validators.required],
             date_depart:[new Date(this.destination.date_depart), Validators.required],
             date_retour: [new Date(this.destination.date_retour), Validators.required],
