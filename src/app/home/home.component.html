@@ -1,5 +1,5 @@
+<app-header-buttons></app-header-buttons>
 <div class="global">
-
 <ng-container *ngIf="destination; else loading">
     <app-table
      [source]="destination"
@@ -7,7 +7,7 @@
      (deleteNotification)="deleteFromHtml($event)"
       (editNotification)="goDetails($event)"> 
     </app-table>
-     
+    
       <button mat-raised-button (click)="goCreate()" color="primary">+</button>
 </ng-container>
 
