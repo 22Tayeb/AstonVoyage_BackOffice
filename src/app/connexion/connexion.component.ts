@@ -26,14 +26,14 @@ export class ConnexionComponent implements OnInit{
 
   ngOnInit(): void{ 
   this.loginForm = this.formBuilder.group({
-        username: ["admin@admin2", [Validators.required,Validators.email]],
-        password: ["Jay13245",[ Validators.required]]
+        username: ["", [Validators.required,Validators.email]],
+        password: ["",[ Validators.required]]
     })
   }
   
   login(){
     
-    this.adminService.adminCreate(this.loginForm.value).subscribe(
+    this.adminService.login(this.loginForm.value).subscribe(
       (reponse:any)=>{
         this.authService.login()
               this.router.navigate(['/home'])

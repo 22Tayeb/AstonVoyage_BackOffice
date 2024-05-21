@@ -16,10 +16,10 @@ export class HeaderButtonsComponent {
   
   
   constructor(public router: Router,
-              private AdminService:AdminService) {
+              private adminService:AdminService) {
   }
   deconnexion(): void {
-    this.AdminService.LogoutAdmin(this.admin).subscribe(
+    this.adminService.logout(this.admin).subscribe(
       (succes:any) => {
     localStorage.removeItem('user_id')
     localStorage.removeItem('accessToken')

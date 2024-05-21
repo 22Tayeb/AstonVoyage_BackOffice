@@ -10,11 +10,11 @@ import { environment } from 'src/environments/environment.development';
   export class AdminService{
     private BACK_URL = environment.apiURL;
     constructor(private http:HttpClient){}
-    adminCreate(admin:any){
+    login(admin:any){
         return this.http.post(this.BACK_URL+'/admin/authenticateAdmin', admin)
     }
-    LogoutAdmin(admin:any){
-      return this.http.post(this.BACK_URL+'/admin/LogoutAdmin',admin)
+    logout(admin:any){
+      return this.http.post(this.BACK_URL+'/admin/logoutAdmin',admin)
     }
     
   }
