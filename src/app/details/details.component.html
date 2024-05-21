@@ -16,7 +16,7 @@
             <!-- Image -->
             <mat-label for="image">image</mat-label>
               <img  [src]="imageUrl" accept="image/jpeg, image/png" class="image" alt=""/>  
-            <input type="file" formControlName="image" (change)="onFileChange($event)">
+            <input type="file" (change)="onFileChange($event)">
             <!-- prix -->
              <mat-form-field class="example-full-width">
                 <mat-label for="prix">Prix</mat-label>
@@ -71,7 +71,7 @@
             <section>
                 <div class="example-label"></div>
                 <div class="example-button-row">
-                     <button mat-flat-button color="primary" (click)="onSubmit(destination._id)">Validé</button> 
+                     <button mat-flat-button color="primary" [disabled]="destinationForm.invalid" (click)="onSubmit(destination._id)">Validé</button> 
                 </div>
             </section>
         </form>
