@@ -1,5 +1,5 @@
 <div class="global">
-    <ng-container *ngIf=" destination; else loading" >
+    <ng-container *ngIf="destination; else loading" >
         
         
         <form class="example-form" [formGroup]="destinationForm">
@@ -15,8 +15,9 @@
             </mat-form-field>
             <!-- Image -->
             <mat-label for="image">image</mat-label>
-              <img  [src]="imageUrl" accept="image/jpeg, image/png" class="image" alt=""/>  
-            <input type="file" (change)="onFileChange($event)">
+              <img [src]="getImageUrl(imageName)"  class="image" alt=""/>  
+              
+            <input type="file" (change)="onFileChange($event)" accept="image/jpeg, image/png">
             <!-- prix -->
              <mat-form-field class="example-full-width">
                 <mat-label for="prix">Prix</mat-label>
