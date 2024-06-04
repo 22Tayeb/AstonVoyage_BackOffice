@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment';
 export class DetailsComponent implements OnInit {
   public destinationForm! : FormGroup 
   destination!: Destination;
-  imageUrl: any;
+  imageName: any;
   date_depart!:Date;
   date_retour!:Date;
 public BACK_URL=environment
@@ -35,7 +35,7 @@ public BACK_URL=environment
         (response:any)=>{
 
           this.destination = response;
-           this.imageUrl = this.destination.image
+           this.imageName = this.destination.image
           this.destinationForm =this.formBuilder.group({
             nom_destination:[this.destination.nom_destination,Validators.required],
             description:[this.destination.description, Validators.required],
@@ -68,12 +68,16 @@ public BACK_URL=environment
   this.http.post(this.BACK_URL.apiURL+'/destination/upload', formData)
     .subscribe((res:any) => {
       console.log(res)
-      this.imageUrl = res.url;
+      this.imageName = res.file;
     },
     (error) => {
       console.log(error)
     });
 }
+
+  getImageUrl(filename: string): string {
+    return this.BACK_URL.apiURL+ "/destination/download/"+filename;
+  }
 
   onSubmit(id=""): void {
     console.log(this.destinationForm.value)
@@ -81,7 +85,7 @@ public BACK_URL=environment
       _id: this.destination._id,
      nom_destination: this.destinationForm.value.nom_destination,
      description: this.destinationForm.value.description,
-     image: this.imageUrl,
+     image: this.imageName,
      prix: this.destinationForm.value.prix,
      date_depart: this.destinationForm.value.date_depart,
      date_retour: this.destinationForm.value.date_retour,

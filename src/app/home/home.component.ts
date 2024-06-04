@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   });
   this.displayedColumns = this.tableService.getDisplayColumn(Role.ELEVE);
  
-  this.destination = this.route.snapshot.data['destination']
+  this.destination = this.route.snapshot.data['destination'];
   console.log(this.destination)
   }
 
