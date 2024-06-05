@@ -27,6 +27,11 @@ import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
  import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { HeaderButtonsComponent } from './header-buttons/header-buttons.component';
+import {MatMenuModule} from '@angular/material/menu';
+
+
+
 
 
 @NgModule({
@@ -37,13 +42,16 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     DetailsComponent,
     HeaderComponent,
     CreateComponent,
-    TableComponent, 
+    TableComponent,
+    HeaderButtonsComponent, 
   ],
   imports: [
    HttpClientModule,
    BrowserModule,
    AppRoutingModule,
    BrowserAnimationsModule,
+   MatIconModule,
+   MatMenuModule,
   // form
    ReactiveFormsModule,
    FormsModule,
