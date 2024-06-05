@@ -6,6 +6,5 @@ export interface Vol {
     heure_depart: string;
     aeroport_arrivee: string;
     heure_arrivee: string;
-    duree_vol: string;
     info_comp: string;
 }

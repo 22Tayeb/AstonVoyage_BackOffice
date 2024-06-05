@@ -48,7 +48,6 @@ public BACK_URL=environment
             heure_depart:[this.destination.vols.heure_depart, Validators.required],
             aeroport_arrivee:[this.destination.vols.aeroport_arrivee, Validators.required],
             heure_arrivee:[this.destination.vols.heure_arrivee, Validators.required],
-            duree_vol:[this.destination.vols.duree_vol, Validators.required],
             info_comp:[this.destination.vols.info_comp, Validators.required],
           })      
         }
@@ -97,7 +96,6 @@ public BACK_URL=environment
       heure_depart: this.destinationForm.value.heure_depart,
       aeroport_arrivee: this.destinationForm.value.aeroport_arrivee,
       heure_arrivee:this.destinationForm.value.heure_arrivee,
-      duree_vol:this.destinationForm.value.duree_vol,
       info_comp:this.destinationForm.value.info_comp,
      }
  }
