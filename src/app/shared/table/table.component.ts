@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-table',
@@ -6,6 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit{
+  private BACK_URL = environment.apiURL;
+
 ngOnInit(): void {
     console.log(this.source);
 }
@@ -19,5 +22,9 @@ deleteFromHtml(id:number) {
 }
 goDetails(id : number){
   this.editNotification.emit(id)
+}
+
+getImageUrl(filename: string): string {
+  return this.BACK_URL+ "/destination/download/"+filename;
 }
 }

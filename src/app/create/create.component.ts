@@ -19,7 +19,7 @@ import { environment } from 'src/environments/environment';
 export class CreateComponent implements OnInit {
   public destinationForm! : FormGroup 
   destination!: Destination;
-  imageUrl:any
+  imageName:any
   date_depart!:Date;
   date_retour!:Date;
 public BACK_URL=environment
@@ -29,7 +29,7 @@ public BACK_URL=environment
               private http: HttpClient) {
   }
   ngOnInit(): void {
-      this.destinationService.getDestination() .subscribe(
+      this.destinationService.getDestination().subscribe(
         (response:any)=>{
           this.destination =  response;
           this.destinationForm =this.formBuilder.group({
@@ -67,7 +67,7 @@ onFileChange(event: any) {
   this.http.post(this.BACK_URL.apiURL+'/destination/upload', formData)
     .subscribe((res:any) => {
       console.log(res)
-      this.imageUrl = res.url;
+      this.imageName = res.file;
     },
     (error) => {
       console.log(error)
@@ -81,7 +81,7 @@ onFileChange(event: any) {
     const destination:Destination = {
      nom_destination: this.destinationForm.value.nom_destination,
      description: this.destinationForm.value.description,
-     image: this.imageUrl,
+     image: this.imageName,
      prix: this.destinationForm.value.prix, 
      date_depart: this.destinationForm.value.date_depart,
      date_retour: this.destinationForm.value.date_retour,

@@ -6,6 +6,6 @@
       <label for="password">Mot de passe:</label>
       <input type="password" id="password" formControlName="password">
     <br>
-      <button (click)="login()" [disabled]="loginForm.invalid" type="submit">Se connecter</button>
+      <button mat-flat-button color="primary" (click)="login()" [disabled]="!loginForm.valid" type="submit">Se connecter</button>
     </form>
 </div>

@@ -10,6 +10,7 @@ import { admin } from '../model/admin';
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.component.html',
+  styleUrls:['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit{
   eleves!: Eleve[];

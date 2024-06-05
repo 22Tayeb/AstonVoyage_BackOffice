@@ -32,5 +32,10 @@ export class DestinationService {
   delete(id : string): Observable<{message:string}> {
     return this.http.delete(this.BACK_URL+'/destination/deleteDest/'+id) as Observable<{message:string}>
   }
+
+  getImage(filename: string): Observable<Blob> {
+    return this.http.get(this.BACK_URL+"/destination/download/"+ filename, { responseType: 'blob' });
+  }
+
 }
 
