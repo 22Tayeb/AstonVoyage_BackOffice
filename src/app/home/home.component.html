@@ -7,8 +7,11 @@
      (deleteNotification)="deleteFromHtml($event)"
       (editNotification)="goDetails($event)"> 
     </app-table>
-    
-      <button mat-raised-button (click)="goCreate()" color="primary">+</button>
+      <div class="boutton-ajouter">
+        <button class="ajouter" mat-fab (click)="goCreate()" color="primary" aria-label="Example icon button with a delete icon">
+          <mat-icon>plus_one</mat-icon>
+        </button>
+      </div>
 </ng-container>
 
     <ng-template #loading>

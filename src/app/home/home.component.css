@@ -1,5 +1,11 @@
-/* div{
+
+
+.boutton-ajouter{
     display: flex;
     justify-content: center;
-    align-items: center;
-} */
+    margin-top: 10px;
+}
+.ajouter{
+    width: 4rem;
+    height: 4rem;
+}
